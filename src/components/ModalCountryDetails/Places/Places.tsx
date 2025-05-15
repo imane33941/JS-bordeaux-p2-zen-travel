@@ -47,7 +47,11 @@ function Places({ country }: { country: CountryProp }) {
 				{myplaces?.map((place) => (
 					<li key={place.name} className="places-card">
 						<h2 className="place-title">{place.name}</h2>
-						<img src={`src/assets/images/${place.picture}`} alt={place.name} />
+						<img
+							src={`src/assets/images/${place.picture}`}
+							alt={place.name}
+							className="img-place"
+						/>
 						<p className="place-description">{place.description}</p>
 					</li>
 				))}

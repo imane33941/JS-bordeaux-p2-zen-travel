@@ -1,7 +1,6 @@
 .dishes {
 	display: flex;
 	justify-content: space-around;
-	background: linear-gradient(to bottom, rgb(66, 140, 149, 0.7), white);
 	margin-top: 0px;
 	gap: 10px;
 }

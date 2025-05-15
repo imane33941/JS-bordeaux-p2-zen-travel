@@ -27,11 +27,6 @@
 	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.info:hover {
-	transform: scale(1.01);
-	box-shadow: 0 20px 40px rgba(66, 140, 149, 0.5);
-}
-
 .flag-countries {
 	border-radius: 12px;
 	width: 150px;
@@ -118,16 +113,18 @@ nav button.active-tab {
 	font-weight: bolder;
 }
 
-.info h2,
-p {
-	color: rgb(66, 140, 149);
-}
-
 .modal-content {
 	display: flex;
 	flex-direction: column;
 	flex: 1;
 	animation: fadeInUp 0.4s ease-out;
+}
+
+.modal-content > h2 {
+	color: #1b444b;
+}
+.modal-content > p {
+	color: #1b444b;
 }
 
 .pack-your-bag {

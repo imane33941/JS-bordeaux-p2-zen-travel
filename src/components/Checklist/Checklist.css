@@ -5,11 +5,16 @@
 	margin: auto;
 	border-radius: 10px;
 	padding: 20px;
-	border: solid rgb(66, 140, 149);
-	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
+	border: 1px solid rgb(66, 140, 149);
+	box-shadow: 0px 0px 2px 0 rgb(66, 140, 149, 0.6);
 	height: 77vh;
 	position: fixed;
 	z-index: 40000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
 }
 
 #close-btn {
@@ -50,6 +55,7 @@ article h1 {
 	white-space: nowrap;
 	position: relative;
 	animation: typing 3.5s steps(41);
+	color: #1b444b;
 }
 
 .typewriter h1::after {
@@ -85,42 +91,42 @@ article h1 {
 	}
 }
 
-article ul {
+article ul.list-checklist {
 	list-style-type: none;
 	display: grid;
 	justify-content: center;
 }
 
-article li {
+article li.checklist-item {
 	padding: 10px 0px 10px 0px;
-	color: var(--color-text-modal);
+	color: #1b444b;
 	font-weight: bold;
 	text-align: justify;
 }
 
-article label {
+article label.checklis-label {
 	display: flex;
 	align-items: center;
 	gap: 20px;
 }
 
-article input {
+article input.checklist-input {
 	box-shadow: 5px 5px 5px var(--color-text-modal);
 	cursor: pointer;
 }
 
-article input:hover {
+article input.checklist-input:hover {
 	opacity: 0.7;
 }
 
-input[type="checkbox"]:checked + span {
+input.checklist-input[type="checkbox"]:checked + span {
 	text-decoration: line-through;
 	color: var(--main-color-modal);
 	opacity: 0.5;
 	border-radius: 5px;
 }
 
-input[type="checkbox"] {
+input.checklist-input[type="checkbox"] {
 	appearance: none;
 	background-color: #fff;
 	margin: 0;
@@ -135,7 +141,7 @@ input[type="checkbox"] {
 	place-content: center;
 }
 
-input[type="checkbox"]::before {
+input.checklist-input[type="checkbox"]::before {
 	content: "";
 	width: 0.65em;
 	height: 0.65em;
@@ -147,11 +153,11 @@ input[type="checkbox"]::before {
 	clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
-input[type="checkbox"]:checked::before {
+input.checklist-input[type="checkbox"]:checked::before {
 	transform: scale(1);
 }
 
-input[type="checkbox"]:focus {
+input.checklist-input[type="checkbox"]:focus {
 	outline: max(2px, 0.15em) solid currentColor;
 	outline-offset: max(2px, 0.15em);
 }
@@ -181,17 +187,17 @@ input[type="checkbox"]:focus {
 		padding: 20px 5px 20px 5px;
 	}
 
-	article h1 {
+	article h1.title-checklist {
 		font-size: 1.2rem;
 		text-align: justify;
 	}
 
-	input[type="checkbox"] {
+	input.checklist-input[type="checkbox"] {
 		height: 13px;
 		width: 13px;
 	}
 
-	article li {
+	article li.checklist-item {
 		font-size: 0.9rem;
 	}
 }

@@ -93,24 +93,37 @@ function Checklist({ country, isOpen, onClose }: ChecklistProps) {
 		<>
 			{isOpen && (
 				<article className="modal-checklist">
-					<button type="button" id="close-btn" onClick={() => onClose()}>
+					<button
+						type="button"
+						className="close-button"
+						id="close-btn"
+						onClick={() => onClose()}
+					>
 						X
 					</button>
 					<div>
-						<img src={countryFlag} alt="flag-picture" />
+						<img
+							src={countryFlag}
+							alt="flag-picture"
+							className="flag-countries "
+						/>
 					</div>
 					<div className="typewriter-container">
 						<div className="typewriter">
-							<h1>
+							<h1 className="title-checklist">
 								Préparer votre séjour : {country?.translations.fra.common}
 							</h1>
 						</div>
 					</div>
-					<ul>
+					<ul className="list-checklist">
 						{items.map((item) => (
-							<li key={item.id}>
-								<label htmlFor={`item-${item.id}`}>
-									<input type="checkbox" id={`item-${item.id}`} />
+							<li key={item.id} className="checklist-item">
+								<label htmlFor={`item-${item.id}`} className="checklis-label">
+									<input
+										type="checkbox"
+										id={`item-${item.id}`}
+										className="checklist-input"
+									/>
 									<span>{item.name}</span>
 								</label>
 							</li>
