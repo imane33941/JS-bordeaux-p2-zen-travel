@@ -1,13 +1,25 @@
 import { useEffect, useState } from "react";
 import "./Tips.css";
 
+interface Tips {
+	[key: string]: string;
+}
+
+interface TimeToVisit {
+	spring: string;
+	autumn: string;
+	saisons: string;
+	tips: Tips;
+}
 interface Country {
 	translations: Record<string, { common: string }>;
+	currencies: string;
+	best_time_to_visit: TimeToVisit;
 }
 
 interface TipsInterface {
-	police: string;
 	ambulance: string;
+	police: string;
 	pompiers: string;
 }
 
@@ -19,6 +31,7 @@ interface dataTipsInterface {
 	plug: string;
 	language: string;
 	emergency: TipsInterface;
+	best_time_to_visit: TimeToVisit;
 }
 
 function Tips({ country }: { country: Country }) {
@@ -63,7 +76,7 @@ function Tips({ country }: { country: Country }) {
 					vaccines: "Vaccins recommandé",
 					plug: "Adaptateur universel recommandé",
 					language: language,
-					emergency: { police: "Consultez les numéros locaux" },
+					emergency: { police: "Consultez les numéros locaux" , ambulance: "", pompiers: ""},
 				});
 			}
 		}

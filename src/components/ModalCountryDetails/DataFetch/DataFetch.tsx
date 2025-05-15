@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 interface Country {
 	translations: Record<string, { common: string }>;
 }
+
 export function useFetchData(country: Country) {
 	const [dataFetch, setDataFetch] = useState(null);
 
