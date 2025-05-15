@@ -5,8 +5,24 @@ interface Country {
 	translations: Record<string, { common: string }>;
 }
 
+interface TipsInterface {
+	police: string;
+	ambulance: string;
+	pompiers: string;
+}
+
+interface dataTipsInterface {
+	country: string;
+	visa: string;
+	vaccines: string;
+	currency: string;
+	plug: string;
+	language: string;
+	emergency: TipsInterface;
+}
+
 function Tips({ country }: { country: Country }) {
-	const [dataTips, setDataTips] = useState(null);
+	const [dataTips, setDataTips] = useState<dataTipsInterface | null>(null);
 	const [currentTips, setCurrentTips] = useState(0);
 
 	useEffect(() => {

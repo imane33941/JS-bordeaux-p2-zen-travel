@@ -14,12 +14,13 @@ interface FetchDataResult {
 	typical_dishes: DishInterface[];
 }
 
-interface GastronomyProps {
-	country: string;
+interface Country {
+	translations: Record<string, { common: string }>;
+	// currencies: string;
 }
 
-function Gastronomy({ country }: GastronomyProps) {
-	const dataGastronomy: FetchDataResult | null = useFetchData(country);
+function Gastronomy({ country }: { country: Country }) {
+	const dataGastronomy: FetchDataResult = useFetchData(country);
 
 	if (!dataGastronomy) return null;
 

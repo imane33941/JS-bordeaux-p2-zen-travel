@@ -84,7 +84,7 @@ function SearchBar({
 		setSuggestions(true);
 	};
 
-	const handleInputChange = (e) => {
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;
 		setSearchCountry(value);
 		handleAutoCompletion(value);
@@ -97,7 +97,7 @@ function SearchBar({
 		setAutoCompletion("");
 	};
 
-	const handleKeyDown = (e) => {
+	const handleKeyDown = (e: React.KeyboardEvent) => {
 		if (e.key === "Tab") {
 			e.preventDefault();
 

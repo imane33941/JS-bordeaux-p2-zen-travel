@@ -10,7 +10,7 @@ interface DataClimat {
 }
 
 function Climat({ country }: { country: Country }) {
-	const dataClimat: DataClimat | null = useFetchData(country);
+	const dataClimat: DataClimat = useFetchData(country);
 
 	function getWeatherIcon(average: number, rainfall: number) {
 		if (rainfall >= 90 && rainfall <= 150) return "🌧️";

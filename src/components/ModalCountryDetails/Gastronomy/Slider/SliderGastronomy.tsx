@@ -14,12 +14,12 @@ interface FetchDataResult {
 	typical_dishes: DishInterface[];
 }
 
-interface SliderProps {
-	country: string;
+interface Country {
+	translations: Record<string, { common: string }>;
 }
 
-function Slider({ country }: SliderProps) {
-	const dataGastronomy: FetchDataResult | null = useFetchData(country);
+function Slider({ country }: { country: Country }) {
+	const dataGastronomy: FetchDataResult = useFetchData(country);
 
 	if (!dataGastronomy) return null;
 
