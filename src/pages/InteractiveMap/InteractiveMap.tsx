@@ -138,9 +138,8 @@ function InteractiveMap() {
 						Réinitialiser le zooom
 					</button>
 				</div>
-				<div className={`vector-map ${isMobile ? "africa" : ""} `}>
+				<div ref={mapRef} className={`vector-map ${isMobile ? "africa" : ""} `}>
 					<VectorMap
-						ref={mapRef}
 						map={worldMill}
 						backgroundColor="transparent"
 						zoomOnScroll={false}
