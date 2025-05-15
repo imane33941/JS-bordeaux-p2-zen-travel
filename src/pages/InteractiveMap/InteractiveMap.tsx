@@ -44,7 +44,7 @@ function InteractiveMap() {
 
 	const [isMobile, setIsMobile] = useState(false);
 	const [isModaContinentlOpen, setIsModaContinentlOpen] = useState(false);
-	const mapRef = useRef<HTMLDivElement | null>(null);
+	const mapRef = useRef<any|null>(null);
 
 	useEffect(() => {
 		const fetchContinents = async () => {
@@ -99,7 +99,7 @@ function InteractiveMap() {
 
 	const handleContinentSelect = (continent: string) => {
 		setIsModaContinentlOpen(false);
-		zoomOnContinent(continent, mapRef);
+		zoomOnContinent(continent);
 	};
 
 	return (
