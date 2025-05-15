@@ -8,6 +8,13 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import ContinentModal from "./ContinentModal/ContinentModal";
 import { handleResetZoom, zoomOnContinent } from "./ContinentModal/zoomUtils";
 
+declare global {
+	interface Window {
+	  $: typeof import('jquery');
+	  jQuery: typeof import('jquery');
+	}
+  }
+  
 interface CountryRegionDetails {
 	cca2: string;
 	region: string;
@@ -37,7 +44,7 @@ function InteractiveMap() {
 
 	const [isMobile, setIsMobile] = useState(false);
 	const [isModaContinentlOpen, setIsModaContinentlOpen] = useState(false);
-	const mapRef = useRef(null);
+	const mapRef = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
 		const fetchContinents = async () => {

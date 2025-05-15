@@ -8,13 +8,20 @@ interface Dish {
 	name: string;
 	description: string;
 	picture: string;
-
 }
 
-
-interface CountryData {
-	typical_dishes: Dish[]
+interface ClimateData {
+	[key: string]: {
+		average: number;
+		rainfall: number;
+	};
 }
+
+export interface CountryData {
+	typical_dishes: Dish[];
+	climate: ClimateData;
+}
+
 
 export function useFetchData(country: Country) {
 	const [dataFetch, setDataFetch] = useState<CountryData | null>(null);

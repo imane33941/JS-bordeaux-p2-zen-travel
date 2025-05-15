@@ -2,20 +2,23 @@ import { useEffect, useState } from "react";
 import "./Tips.css";
 
 interface Tips {
-	[key: string]: string;
+	[key: number]: string;
 }
 
 interface TimeToVisit {
-	spring: string;
-	autumn: string;
-	saisons: string;
-	tips: Tips;
+    tips: string[];
+    spring?: string;
+    autumn?: string;
+    saisons?: string;
 }
+
+
 interface Country {
 	translations: Record<string, { common: string }>;
-	currencies: string;
-	best_time_to_visit: TimeToVisit;
+    currencies: Record<string, { name: string; symbol: string }>;
+    best_time_to_visit: TimeToVisit;
 }
+
 
 interface TipsInterface {
 	ambulance: string;
@@ -24,15 +27,16 @@ interface TipsInterface {
 }
 
 interface dataTipsInterface {
-	country: string;
-	visa: string;
-	vaccines: string;
-	currency: string;
-	plug: string;
-	language: string;
-	emergency: TipsInterface;
-	best_time_to_visit: TimeToVisit;
+    country: string;
+    visa: string;
+    vaccines: string;
+    currency: string;
+    plug: string;
+    language: string;
+    emergency: TipsInterface;
+    best_time_to_visit: TimeToVisit;
 }
+
 
 function Tips({ country }: { country: Country }) {
 	const [dataTips, setDataTips] = useState<dataTipsInterface | null>(null);
@@ -61,10 +65,11 @@ function Tips({ country }: { country: Country }) {
 				const language = countryName ? countryName : "Langue locale";
 
 				setDataTips({
+					country: countryName,
 					best_time_to_visit: {
 						tips: [
 							"🧳 Vérifiez votre CheckList de voyage pour ne rien oublier",
-							`🗣️ Pensez à apprendre quelques mots en ${language}`,
+							`🗣️ Pensez à apprendre quelques mots en ${countryName}`,
 						],
 					},
 					visa: "Vérifier les exigences de visa",
@@ -75,9 +80,14 @@ function Tips({ country }: { country: Country }) {
 						: "Devise locale",
 					vaccines: "Vaccins recommandé",
 					plug: "Adaptateur universel recommandé",
-					language: language,
-					emergency: { police: "Consultez les numéros locaux" , ambulance: "", pompiers: ""},
+					language: language ? language : "Langue locale",
+					emergency: {
+						police: "Consultez les numéros locaux",
+						ambulance: "",
+						pompiers: "",
+					},
 				});
+				
 			}
 		}
 		fetchDataTips();
