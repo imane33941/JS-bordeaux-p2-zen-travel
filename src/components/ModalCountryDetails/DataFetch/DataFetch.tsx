@@ -3,8 +3,21 @@ interface Country {
 	translations: Record<string, { common: string }>;
 }
 
+interface Dish {
+	id: string;
+	name: string;
+	description: string;
+	picture: string;
+
+}
+
+
+interface CountryData {
+	typical_dishes: Dish[]
+}
+
 export function useFetchData(country: Country) {
-	const [dataFetch, setDataFetch] = useState(null);
+	const [dataFetch, setDataFetch] = useState<CountryData | null>(null);
 
 	useEffect(() => {
 		async function fetchCountryData() {

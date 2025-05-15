@@ -16,7 +16,7 @@ interface FetchDataResult {
 
 interface Country {
 	translations: Record<string, { common: string }>;
-	// currencies: string;
+	
 }
 
 function Gastronomy({ country }: { country: Country }) {
