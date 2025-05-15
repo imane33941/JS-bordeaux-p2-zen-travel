@@ -15,6 +15,25 @@ interface Country {
 	code: string;
 }
 
+interface CountryAPIResponse {
+	flags: {
+		svg: string;
+		png: string;
+	};
+	translations: {
+		fra: {
+			common: string;
+			official: string;
+		};
+		[key: string]: {
+			common: string;
+			official: string;
+		};
+	};
+	cca2: string;
+}
+
+
 function SearchBar({
 	onCountrySelected,
 	resetInput,
@@ -34,7 +53,7 @@ function SearchBar({
 			const response = await fetch("https://restcountries.com/v3.1/all");
 			const data = await response.json();
 
-			const countryDetails: Country[] = data.map((item) => ({
+			const countryDetails: Country[] = data.map((item: CountryAPIResponse) => ({
 				name: item.translations.fra.common,
 				flag: item.flags.svg,
 				code: item.cca2,

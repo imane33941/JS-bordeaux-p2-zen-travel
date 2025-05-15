@@ -3,28 +3,57 @@ interface Country {
 	translations: Record<string, { common: string }>;
 }
 
-interface Dish {
+export interface EmergencyTips {
+	police: string;
+	ambulance: string;
+	pompiers: string;
+}
+
+export interface BestTimeToVisit {
+	spring: string;
+	autumn: string;
+	saisons: string;
+	tips: string[];
+}
+
+export interface DataTipsInterface {
+	country: string;
+	visa: string;
+	vaccines: string;
+	currency: string;
+	plug: string;
+	language: string;
+	emergency: EmergencyTips;
+	best_time_to_visit: BestTimeToVisit;
+}
+
+export interface Dish {
 	id: string;
 	name: string;
 	description: string;
 	picture: string;
 }
 
-interface ClimateData {
+export interface ClimateData {
 	[key: string]: {
 		average: number;
 		rainfall: number;
 	};
 }
 
-export interface CountryData {
+export interface CountryInterface {
+	translations: Record<string, { common: string }>;
+	currencies: Record<string, { name: string; symbol: string }>;
+	best_time_to_visit: BestTimeToVisit;
 	typical_dishes: Dish[];
 	climate: ClimateData;
+	tips: DataTipsInterface;
 }
 
 
+
 export function useFetchData(country: Country) {
-	const [dataFetch, setDataFetch] = useState<CountryData | null>(null);
+	const [dataFetch, setDataFetch] = useState<CountryInterface | null>(null);
 
 	useEffect(() => {
 		async function fetchCountryData() {

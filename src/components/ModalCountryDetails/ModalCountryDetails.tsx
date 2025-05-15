@@ -21,6 +21,19 @@ interface CountryInterface {
 	languages: string;
 }
 
+interface TimeToVisit {
+	spring: string;
+	autumn: string;
+	saisons: string;
+}
+
+export interface Country {
+	translations: Record<string, { common: string }>;
+	currencies: Record<string, { name: string; symbol: string }>;
+	best_time_to_visit: TimeToVisit;
+}
+
+
 function ModalCountryDetails({
 	countryCode,
 	onClose,
