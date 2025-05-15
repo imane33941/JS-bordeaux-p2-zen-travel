@@ -19,7 +19,7 @@ interface Country {
 }
 
 function Slider({ country }: { country: Country }) {
-	const dataGastronomy: FetchDataResult = useFetchData(country);
+	const dataGastronomy: FetchDataResult | null = useFetchData(country);
 
 	if (!dataGastronomy) return null;
 

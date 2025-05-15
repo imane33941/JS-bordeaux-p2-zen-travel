@@ -6,11 +6,11 @@ interface Country {
 }
 
 interface DataClimat {
-	climate: { [key: string]: { average: number; rainfall: number } };
+	climate: { [key: string]: { average: number; rainfall: number }} ;
 }
 
 function Climat({ country }: { country: Country }) {
-	const dataClimat: DataClimat = useFetchData(country);
+	const dataClimat: DataClimat | null = useFetchData(country);
 
 	function getWeatherIcon(average: number, rainfall: number) {
 		if (rainfall >= 90 && rainfall <= 150) return "🌧️";
