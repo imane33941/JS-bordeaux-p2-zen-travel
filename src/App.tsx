@@ -51,22 +51,13 @@ function App() {
 				<p className="text-footer">© 2025 Zen Travel. Tous droits réservés.</p>
 				<div className="footer-socials">
 					<a href="https://instagram.com" target="_blank" rel="noreferrer">
-						<img
-							src="src/assets/images/imageSocial/instagram.png"
-							alt="Instagram"
-						/>
+						<img src={images.instagram} alt="Instagram" />
 					</a>
 					<a href="https://facebook.com" target="_blank" rel="noreferrer">
-						<img
-							src="src/assets/images/imageSocial/facebook.png"
-							alt="Facebook"
-						/>
+						<img src={images.facebook} alt="Facebook" />
 					</a>
 					<a href="https://twitter.com" target="_blank" rel="noreferrer">
-						<img
-							src="src/assets/images/imageSocial/twitter.png"
-							alt="Twitter"
-						/>
+						<img src={images.twitter} alt="Twitter" />
 					</a>
 				</div>
 			</footer>
