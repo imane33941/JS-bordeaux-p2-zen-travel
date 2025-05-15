@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
+import images from "../../assets/images/image";
 
 function Home() {
 	return (
 		<section className="home-container">
 			<div className="image-section">
-				<img
-					src="src/assets/images/home.jpg"
-					alt="Voyage"
-					className="home-img"
-				/>
+				<img src={images.home} alt="Voyage" className="home-img" />
 				<div className="bg-shape" />
 			</div>
 
