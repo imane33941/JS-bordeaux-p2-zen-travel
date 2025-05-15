@@ -15,9 +15,11 @@ interface TimeToVisit {
 
 interface Country {
 	translations: Record<string, { common: string }>;
-    currencies: Record<string, { name: string; symbol: string }>;
-    best_time_to_visit: TimeToVisit;
+    currencies?: Record<string, { name: string; symbol: string }>;
+    best_time_to_visit?: TimeToVisit;
 }
+
+
 
 
 interface TipsInterface {
