@@ -2,6 +2,7 @@ import "./Gastronomy.css";
 import "./Slider/SliderGastronomy.css";
 import { useFetchData } from "../DataFetch/DataFetch.tsx";
 import Slider from "./Slider/SliderGastronomy.tsx";
+import { DishesMap } from "../../../assets/images/image.ts";
 
 interface DishInterface {
 	id: string;
@@ -16,7 +17,6 @@ interface FetchDataResult {
 
 interface Country {
 	translations: Record<string, { common: string }>;
-	
 }
 
 function Gastronomy({ country }: { country: Country }) {
@@ -31,7 +31,7 @@ function Gastronomy({ country }: { country: Country }) {
 				{dataGastronomy?.typical_dishes.slice(0, 3).map((dish) => (
 					<div key={dish.id} className="dish-card">
 						<img
-							src={`src/assets/images/${dish.picture}`}
+							src={DishesMap[dish.picture]}
 							alt="typical-dish-picture"
 							className="dishe-img"
 							id={`dish-${dish.id}`}

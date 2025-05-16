@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router";
 import "./App.css";
 import ContactBox from "./components/ContactBox/ContactBox";
 import "./components/Checklist/Checklist";
-import images from "./assets/images/image";
+import images from "./../src/assets/images/image";
 
 function App() {
 	const [menuOpen, setMenuOpen] = useState(false);

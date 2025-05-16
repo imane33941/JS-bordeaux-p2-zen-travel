@@ -1,6 +1,7 @@
 import Slider from "./Slider/Slider";
 import "./Places.css";
 import { useEffect, useState } from "react";
+import { placesMap } from "../../../assets/images/image";
 
 interface MustSeePlace {
 	name: string;
@@ -48,7 +49,7 @@ function Places({ country }: { country: CountryProp }) {
 					<li key={place.name} className="places-card">
 						<h2 className="place-title">{place.name}</h2>
 						<img
-							src={`src/assets/images/${place.picture}`}
+							src={placesMap[place.picture]}
 							alt={place.name}
 							className="img-place"
 						/>

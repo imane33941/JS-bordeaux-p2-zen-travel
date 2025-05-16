@@ -2,6 +2,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { useFetchData } from "../../DataFetch/DataFetch.tsx";
 import "./SliderGastronomy.css";
+import { DishesMap } from "../../../../assets/images/image.ts";
 
 interface DishInterface {
 	id: string;
@@ -34,7 +35,7 @@ function Slider({ country }: { country: Country }) {
 				{dataGastronomy.typical_dishes.slice(0, 3).map((dish) => (
 					<div key={dish.id} className="dish-card-slider">
 						<img
-							src={`src/assets/images/${dish.picture}`}
+							src={DishesMap[dish.picture]}
 							alt="typical-dish-picture"
 							id={`dish-${dish.id}`}
 						/>
