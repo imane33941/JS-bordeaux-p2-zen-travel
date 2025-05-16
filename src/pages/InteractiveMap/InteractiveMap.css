@@ -3,6 +3,7 @@ section.interactive-map {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	animation: fadeInUp 0.6s ease-out;
 }
 
 .map-wrapper {
@@ -49,6 +50,7 @@ section.interactive-map {
 
 .vector-map.africa {
 	transform: scale(2);
+	transform-origin: center;
 }
 
 .map-continent-mobile {
@@ -74,8 +76,8 @@ section.interactive-map {
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
-		gap: 50px;
-		padding: 10px;
+		gap: 20px;
+		padding: 10px 0;
 		z-index: 1;
 		background: rgba(164, 80, 32, 0.25);
 		backdrop-filter: blur(6px);

@@ -15,8 +15,8 @@
 	padding: 1rem;
 	width: 90%;
 	max-width: 700px;
-	max-height: 40vh;
-	height: 50%;
+	max-height: 43vh;
+	height: 57%;
 
 	margin: auto;
 	background: #ffffff0d;
@@ -58,7 +58,7 @@
 	background: #fff8dc3f;
 	margin-bottom: 1.5rem;
 	padding: 0.75rem 2rem;
-	border-left: 7px solid #34aac262;
+	border-left: 10px solid #34aac262;
 	border-radius: 5px;
 }
 
@@ -119,7 +119,7 @@
 	font-weight: bold;
 	width: 100%;
 	font-size: 1.1rem;
-	border-left: 7px solid #34aac262;
+	border-left: 10px solid #34aac262;
 }
 
 .additional-info ul li > span {
@@ -136,7 +136,7 @@
 	.tips {
 		padding: 1rem;
 		width: 85%;
-		height: 100%;
+		height: 310px;
 		margin-top: 20px;
 	}
 
@@ -164,7 +164,6 @@
 	.carousel-controls button {
 		font-size: 1rem;
 		padding: 0.5rem 0.8rem;
-		width: 120px;
 	}
 
 	.additional-info p {

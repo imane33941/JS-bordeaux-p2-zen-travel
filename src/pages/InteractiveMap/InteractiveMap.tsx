@@ -10,11 +10,11 @@ import { handleResetZoom, zoomOnContinent } from "./ContinentModal/zoomUtils";
 
 declare global {
 	interface Window {
-	  $: typeof import('jquery');
-	  jQuery: typeof import('jquery');
+		$: typeof import("jquery");
+		jQuery: typeof import("jquery");
 	}
-  }
-  
+}
+
 interface CountryRegionDetails {
 	cca2: string;
 	region: string;
@@ -44,7 +44,7 @@ function InteractiveMap() {
 
 	const [isMobile, setIsMobile] = useState(false);
 	const [isModaContinentlOpen, setIsModaContinentlOpen] = useState(false);
-	const mapRef = useRef<any|null>(null);
+	const mapRef = useRef<any | null>(null);
 
 	useEffect(() => {
 		const fetchContinents = async () => {

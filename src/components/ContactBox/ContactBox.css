@@ -10,6 +10,7 @@
 	);
 	border-radius: 15px;
 	margin: auto;
+	text-align: center;
 }
 .contactBox p {
 	color: white;
@@ -18,6 +19,8 @@
 .formulaire {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	text-align: center;
 	gap: 1rem;
 }
 

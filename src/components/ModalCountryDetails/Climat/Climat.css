@@ -115,7 +115,7 @@
 @media (max-width: 768px) {
 	.climat {
 		padding: 1rem;
-		height: auto;
+		height: 50vh;
 	}
 	.calendar {
 		grid-template-columns: repeat(2, 1fr);

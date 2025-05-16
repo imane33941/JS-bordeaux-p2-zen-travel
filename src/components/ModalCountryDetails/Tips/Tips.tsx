@@ -6,21 +6,17 @@ interface Tips {
 }
 
 interface TimeToVisit {
-    tips: string[];
-    spring?: string;
-    autumn?: string;
-    saisons?: string;
+	tips: string[];
+	spring?: string;
+	autumn?: string;
+	saisons?: string;
 }
-
 
 interface Country {
 	translations: Record<string, { common: string }>;
-    currencies?: Record<string, { name: string; symbol: string }>;
-    best_time_to_visit?: TimeToVisit;
+	currencies?: Record<string, { name: string; symbol: string }>;
+	best_time_to_visit?: TimeToVisit;
 }
-
-
-
 
 interface TipsInterface {
 	ambulance: string;
@@ -29,16 +25,15 @@ interface TipsInterface {
 }
 
 interface dataTipsInterface {
-    country: string;
-    visa: string;
-    vaccines: string;
-    currency: string;
-    plug: string;
-    language: string;
-    emergency: TipsInterface;
-    best_time_to_visit: TimeToVisit;
+	country: string;
+	visa: string;
+	vaccines: string;
+	currency: string;
+	plug: string;
+	language: string;
+	emergency: TipsInterface;
+	best_time_to_visit: TimeToVisit;
 }
-
 
 function Tips({ country }: { country: Country }) {
 	const [dataTips, setDataTips] = useState<dataTipsInterface | null>(null);
@@ -89,7 +84,6 @@ function Tips({ country }: { country: Country }) {
 						pompiers: "",
 					},
 				});
-				
 			}
 		}
 		fetchDataTips();
@@ -112,7 +106,7 @@ function Tips({ country }: { country: Country }) {
 									currentTips > 0 && setCurrentTips(currentTips - 1);
 								}}
 							>
-								⬅ Précedent
+								⬅️​ Précedent
 							</button>
 							<button
 								type="button"
