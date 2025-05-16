@@ -132,6 +132,7 @@ function Checklist({ country, isOpen, onClose }: ChecklistProps) {
 					<button
 						type="button"
 						id="print-btn"
+						className="pack-your-bag"
 						onClick={() => {
 							window.print();
 						}}
