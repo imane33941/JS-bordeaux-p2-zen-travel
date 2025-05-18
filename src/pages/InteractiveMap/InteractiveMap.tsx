@@ -103,66 +103,70 @@ function InteractiveMap() {
 	};
 
 	return (
-		<section className="interactive-map">
+		<>
 			<SearchBar
 				onCountrySelected={setSelectedCountry}
 				resetInput={resetSearch}
 				onCountryHovered={setHoveredCountry}
 			/>
-
-			{isModaContinentlOpen && (
-				<ContinentModal
-					onClose={() => setIsModaContinentlOpen(false)}
-					onSelect={handleContinentSelect}
-				/>
-			)}
-
-			{selectedCountry && (
-				<div className={`modal-info ${selectedCountry ? "blur" : ""}`}>
-					<ModalCountryDetails
-						countryCode={selectedCountry}
-						onClose={() => {
-							setSelectedCountry(null);
-							handleResetSearch();
-						}}
+			<section className="interactive-map">
+				{isModaContinentlOpen && (
+					<ContinentModal
+						onClose={() => setIsModaContinentlOpen(false)}
+						onSelect={handleContinentSelect}
 					/>
-				</div>
-			)}
-			<div className="map-wrapper">
-				<div className="map-continent-mobile">
-					<button
-						type="button"
-						className="choose-continent-button"
-						onClick={() => setIsModaContinentlOpen(true)}
+				)}
+
+				{selectedCountry && (
+					<div className={`modal-info ${selectedCountry ? "blur" : ""}`}>
+						<ModalCountryDetails
+							countryCode={selectedCountry}
+							onClose={() => {
+								setSelectedCountry(null);
+								handleResetSearch();
+							}}
+						/>
+					</div>
+				)}
+				<div className="map-wrapper">
+					<div className="map-continent-mobile">
+						<button
+							type="button"
+							className="choose-continent-button"
+							onClick={() => setIsModaContinentlOpen(true)}
+						>
+							Choisir un continent
+						</button>
+						<button
+							type="button"
+							className="reset-zoom-button"
+							onClick={handleResetZoom}
+						>
+							Réinitialiser le zooom
+						</button>
+					</div>
+					<div
+						ref={mapRef}
+						className={`vector-map ${isMobile ? "africa" : ""} `}
 					>
-						Choisir un continent
-					</button>
-					<button
-						type="button"
-						className="reset-zoom-button"
-						onClick={handleResetZoom}
-					>
-						Réinitialiser le zooom
-					</button>
+						<VectorMap
+							map={worldMill}
+							backgroundColor="transparent"
+							zoomOnScroll={false}
+							onRegionClick={handlecountryClick}
+							series={{
+								regions: [
+									{
+										values: { ...continentColorsByCountry, ...continentColors },
+										attribute: "fill",
+									},
+								],
+							}}
+						/>
+					</div>
 				</div>
-				<div ref={mapRef} className={`vector-map ${isMobile ? "africa" : ""} `}>
-					<VectorMap
-						map={worldMill}
-						backgroundColor="transparent"
-						zoomOnScroll={false}
-						onRegionClick={handlecountryClick}
-						series={{
-							regions: [
-								{
-									values: { ...continentColorsByCountry, ...continentColors },
-									attribute: "fill",
-								},
-							],
-						}}
-					/>
-				</div>
-			</div>
-		</section>
+			</section>
+		</>
 	);
 }
 

@@ -60,17 +60,12 @@ function Slider({ country }: { country: CountryProp }) {
 				{myPlaces.map((place) => (
 					<div key={place.name}>
 						<img
-							className="carouselImage"
+							className="img-place"
 							src={`src/assets/images/${place.picture}`}
 							alt={place.name}
-							style={{
-								width: "190px",
-								height: "160px",
-								objectFit: "cover",
-							}}
 						/>
-						<h2>{place.name}</h2>
-						<p>{place.description}</p>
+						<h2 className="place-title">{place.name}</h2>
+						<p className="place-description">{place.description}</p>
 					</div>
 				))}
 			</Carousel>

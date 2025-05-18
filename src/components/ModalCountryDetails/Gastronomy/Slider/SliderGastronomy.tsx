@@ -38,9 +38,10 @@ function Slider({ country }: { country: Country }) {
 							src={DishesMap[dish.picture]}
 							alt="typical-dish-picture"
 							id={`dish-${dish.id}`}
+							className="dishe-img"
 						/>
-						<h2>{dish.name}</h2>
-						<p>{dish.description}</p>
+						<h2 className="dishe-title">{dish.name}</h2>
+						<p className="dishe-description ">{dish.description}</p>
 					</div>
 				))}
 			</Carousel>
