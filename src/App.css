@@ -77,9 +77,14 @@ header .header-navbar {
 	margin: 0 30px;
 }
 
+.logo {
+	flex-shrink: 0;
+	width: 120px;
+}
+
 header .header-navbar .logo img {
-	width: 60%;
-	height: 70%;
+	width: 100%;
+	height: auto;
 	filter: brightness(0.6);
 	background-color: transparent;
 	border: none;
@@ -88,6 +93,7 @@ header .header-navbar .logo img {
 }
 header .header-navbar .logo {
 	z-index: 20;
+	max-width: 120px;
 }
 
 header .header-navbar ul {
@@ -114,6 +120,7 @@ header .header-navbar ul li {
 	cursor: pointer;
 	transition: all 0.3s ease;
 	z-index: 20;
+	margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
